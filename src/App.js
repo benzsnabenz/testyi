@@ -26,7 +26,7 @@ class App extends Component {
     let search = window.location.search;
     let params = new URLSearchParams(search);
     let code = params.get('code');
-    
+    // sessionStorage.setItem("userID", null);
        console.log(code);
        if(code != null && sessionStorage.getItem("userID") == null){
          console.log(code);
@@ -99,7 +99,7 @@ class App extends Component {
              
                     // let data3 = JSON.parse(response3);
                     console.log(response3.body);
-                    window.location.reload();
+                    window.location.href = "/";
                 
                   });
             }
