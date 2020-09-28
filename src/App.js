@@ -21,14 +21,15 @@ class App extends Component {
 
   }
   componentDidMount(){
-    console.log(sessionStorage.getItem("lastname"));
+    // console.log(sessionStorage.getItem("userID"));
  
     let search = window.location.search;
     let params = new URLSearchParams(search);
     let code = params.get('code');
     
        console.log(code);
-       if(code != undefined  && code != null && sessionStorage.getItem("userID") == null){
+       if(code != null && sessionStorage.getItem("userID") == null){
+         console.log(code);
         var request = require('request');
         var options = {
           'method': 'POST',
@@ -82,7 +83,7 @@ class App extends Component {
               sessionStorage.setItem("picture", data2.picture);
                  var options3 = {
                     'method': 'POST',
-                    'url': 'http://localhost/LoginPHP/index.php?method=save',
+                    'url': 'http://www.dcis.co.th/backoffice/demo/index.php?method=save',
                     'headers': {
                       'Content-Type': 'application/x-www-form-urlencoded'
                     },
@@ -98,6 +99,7 @@ class App extends Component {
              
                     // let data3 = JSON.parse(response3);
                     console.log(response3.body);
+                    window.location.reload();
                 
                   });
             }
@@ -116,9 +118,13 @@ class App extends Component {
         <Router>
         {/* Router component can have only 1 child. We'll use a simple
           div element for this example. */}
-        <div>
-
-          Loin Line
+        <div id="" style={{"width": "100%",
+    'height': '100vh',
+    'background': '#FFF'}}>
+        <a href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1654986755&redirect_uri=http://localhost:3000/lineAPI&state=12345abcde&scope=profile%20openid&nonce=09876xyz">
+           <div className="btnlogin">Login</div>
+           </a>
+          {/* Loin Line */}
         </div>
       </Router>
       )

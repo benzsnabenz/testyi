@@ -16,7 +16,7 @@ console.log(code);
     var request = require('request');
     var options = {
       'method': 'POST',
-      'url': 'http://localhost/LoginPHP/index.php?method=getProductByid&id='+code
+      'url': 'http://www.dcis.co.th/backoffice/demo/index.php?method=getProductByid&id='+code
       // formData: {
       //   'id': '1'
       // }

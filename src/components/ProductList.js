@@ -16,7 +16,7 @@ class ProductList extends React.Component {
     var request = require('request');
     var options = {
       'method': 'POST',
-      'url': 'http://localhost/LoginPHP/index.php?method=getProduct',
+      'url': 'http://www.dcis.co.th/backoffice/demo/index.php?method=getProduct',
       'headers': {
       }
     };
